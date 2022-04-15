@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace BicycleCompany.PartModels.API.Models
+﻿namespace BicycleCompany.PartModels.API.Models
 {
     public class Manufacturer
     {
