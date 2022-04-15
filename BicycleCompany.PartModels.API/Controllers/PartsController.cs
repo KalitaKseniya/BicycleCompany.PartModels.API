@@ -11,7 +11,7 @@ using Swashbuckle.AspNetCore.Annotations;
 namespace BicycleCompany.PartModels.API.Controllers
 {
     //[Authorize(Roles = "Administrator, Master")]// ToDo K; do we need auth here?
-    [SwaggerTag("Master")]
+    [SwaggerTag("Master")]//ToDo K: what's for?
     [ApiController]
     [Route("api/admin/[controller]")]
     public class PartsController : ControllerBase

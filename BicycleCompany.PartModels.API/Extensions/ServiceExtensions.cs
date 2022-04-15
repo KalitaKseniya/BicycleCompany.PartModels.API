@@ -22,11 +22,13 @@ namespace BicycleCompany.PartModels.API.Extensions
         {
             services.AddScoped<IPartRepository, PartRepository>();
             services.AddScoped<IPartDetailsRepository, PartDetailsRepository>();
+            services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IPartService, PartService>();
+            services.AddScoped<IManufacturerService, ManufacturerService>();
         }
 
         public static void ConfigureCorsPolicy(this IServiceCollection services)
