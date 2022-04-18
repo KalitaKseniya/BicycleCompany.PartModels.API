@@ -27,7 +27,7 @@
         /// <summary>
         /// Rule how to order records
         /// </summary>
-        /// <example>name,model desc</example>
+        /// <example>name</example>
         public string OrderBy { get; set; }
     }
 }

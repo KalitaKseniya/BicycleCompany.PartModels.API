@@ -17,6 +17,9 @@ namespace BicycleCompany.PartModels.API.Repositories.Interfaces
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression) =>
             _repositoryContext.Set<T>().Where(expression).AsNoTracking();
+        
+        public bool Exist(Expression<Func<T, bool>> expression) =>
+            _repositoryContext.Set<T>().Any(expression);
 
         public Task CreateAsync(T entity)
         {

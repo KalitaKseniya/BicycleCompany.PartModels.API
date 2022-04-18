@@ -21,13 +21,14 @@ namespace BicycleCompany.PartModels.API.Extensions
         public static void RegisterRepositories(this IServiceCollection services)
         {
             services.AddScoped<IPartRepository, PartRepository>();
-            services.AddScoped<IPartDetailsRepository, PartDetailsRepository>();
+            services.AddScoped<IPartModelRepository, PartModelRepository>();
             services.AddScoped<IManufacturerRepository, ManufacturerRepository>();
         }
 
         public static void RegisterServices(this IServiceCollection services)
         {
             services.AddScoped<IPartService, PartService>();
+            services.AddScoped<IPartModelService, PartModelService>();
             services.AddScoped<IManufacturerService, ManufacturerService>();
         }
 

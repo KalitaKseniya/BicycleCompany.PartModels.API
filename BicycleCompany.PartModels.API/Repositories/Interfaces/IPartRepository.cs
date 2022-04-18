@@ -1,5 +1,6 @@
 ﻿using BicycleCompany.PartModels.API.Boundary.Features;
 using BicycleCompany.PartModels.API.Models;
+using System.Linq.Expressions;
 
 namespace BicycleCompany.PartModels.API.Repositories.Interfaces
 {
@@ -11,5 +12,6 @@ namespace BicycleCompany.PartModels.API.Repositories.Interfaces
         Task CreatePartAsync(Part part);
         Task DeletePartAsync(Part part);
         Task UpdatePartAsync(Part part);
+        bool Exist(Expression<Func<Part, bool>> expression);
     }
 }

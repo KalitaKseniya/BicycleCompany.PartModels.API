@@ -38,6 +38,7 @@ if (app.Environment.IsDevelopment())
 app.UseMiddleware<ExceptionHandler>();
 
 app.UseHttpsRedirection();
+app.UseCors("CorsPolicy");
 
 app.UseAuthorization();
 

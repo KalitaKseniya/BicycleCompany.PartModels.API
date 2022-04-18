@@ -1,4 +1,5 @@
 ﻿using BicycleCompany.PartModels.API.Models;
+using System.Linq.Expressions;
 
 namespace BicycleCompany.PartModels.API.Repositories.Interfaces
 {
@@ -10,6 +11,6 @@ namespace BicycleCompany.PartModels.API.Repositories.Interfaces
         Task CreateAsync(Manufacturer manufacturer);
         Task DeleteAsync(Manufacturer manufacturer);
         Task UpdateAsync(Manufacturer manufacturer);
-
+        bool Exist(Expression<Func<Manufacturer, bool>> expression);
     }
 }
