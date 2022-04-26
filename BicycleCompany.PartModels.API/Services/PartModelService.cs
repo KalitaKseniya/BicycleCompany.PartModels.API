@@ -2,6 +2,7 @@
 using BicycleCompany.PartModels.API.Boundary.Features;
 using BicycleCompany.PartModels.API.Boundary.Request;
 using BicycleCompany.PartModels.API.Boundary.Responses;
+using BicycleCompany.PartModels.API.Helpers;
 using BicycleCompany.PartModels.API.Models;
 using BicycleCompany.PartModels.API.Repositories.Interfaces;
 using BicycleCompany.PartModels.API.Services.Interfaces;
@@ -20,16 +21,18 @@ namespace BicycleCompany.PartModels.API.Services
         private readonly IPartRepository _partRepository;
         private readonly IManufacturerRepository _manufacturerRepository;
         private readonly ILoggerManager _logger;
+        private readonly IFileStorageService _fileStorageService;
 
         public PartModelService(IMapper mapper, IPartModelRepository partModelRepository, ILoggerManager logger,
-            IPartRepository partRepository, IManufacturerRepository  manufacturerRepository)
+            IPartRepository partRepository, IManufacturerRepository  manufacturerRepository, IFileStorageService fileStorageService)
         {
             _mapper = mapper;
             _partModelRepository = partModelRepository;
             _logger = logger;
             _partRepository = partRepository;
             _manufacturerRepository = manufacturerRepository;
-        } 
+            _fileStorageService = fileStorageService;
+        }
 
         public async Task<PartModelCreatedModel> CreateAsync(PartModelForCreateOrUpdateModel model)
         {
@@ -38,6 +41,11 @@ namespace BicycleCompany.PartModels.API.Services
             CheckIfManufacturerExists(model.ManufacturerId);
             CheckIfPartExists(model.PartId);
 
+            if (!string.IsNullOrWhiteSpace(model.ImageUrl))
+            {
+                var partModelPicture = Convert.FromBase64String(model.ImageUrl);
+                model.ImageUrl = await _fileStorageService.SaveFileAsync(partModelPicture, ".jpg", "part-models");
+            }
             var entity = _mapper.Map<PartModel>(model);
 
             await _partModelRepository.CreateAsync(entity);

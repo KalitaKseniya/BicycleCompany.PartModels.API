@@ -3,6 +3,7 @@ using BicycleCompany.PartModels.API.Boundary.Features;
 using BicycleCompany.PartModels.API.Boundary.Request;
 using BicycleCompany.PartModels.API.Boundary.Responses;
 using BicycleCompany.PartModels.API.Extensions;
+using BicycleCompany.PartModels.API.Helpers;
 using BicycleCompany.PartModels.API.Repositories.Interfaces;
 using BicycleCompany.PartModels.API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;

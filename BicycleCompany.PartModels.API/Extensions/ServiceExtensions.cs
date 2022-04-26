@@ -1,4 +1,5 @@
-﻿using BicycleCompany.PartModels.API.Infrastructure;
+﻿using BicycleCompany.PartModels.API.Helpers;
+using BicycleCompany.PartModels.API.Infrastructure;
 using BicycleCompany.PartModels.API.Repositories;
 using BicycleCompany.PartModels.API.Repositories.Interfaces;
 using BicycleCompany.PartModels.API.Services;
@@ -30,6 +31,7 @@ namespace BicycleCompany.PartModels.API.Extensions
             services.AddScoped<IPartService, PartService>();
             services.AddScoped<IPartModelService, PartModelService>();
             services.AddScoped<IManufacturerService, ManufacturerService>();
+            services.AddScoped<IFileStorageService, AzureStorageService>();
         }
 
         public static void ConfigureCorsPolicy(this IServiceCollection services)
