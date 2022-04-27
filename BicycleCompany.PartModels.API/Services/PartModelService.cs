@@ -91,6 +91,11 @@ namespace BicycleCompany.PartModels.API.Services
             CheckIfPartExists(model.PartId);
 
             _mapper.Map(model, entity);
+            if (!string.IsNullOrWhiteSpace(model.ImageUrl))
+            {
+                var partModelPicture = Convert.FromBase64String(model.ImageUrl);
+                entity.ImageUrl = await _fileStorageService.EditFileAsync(partModelPicture, ".jpg", "part-models", entity.ImageUrl);
+            }
             await _partModelRepository.UpdateAsync(entity);
         }
 

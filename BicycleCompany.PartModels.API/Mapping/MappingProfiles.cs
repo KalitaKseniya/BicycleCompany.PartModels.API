@@ -20,7 +20,7 @@ namespace BicycleCompany.PartModels.API.Mapping
             CreateMap<Manufacturer, ManufacturerForReadModel>();
             CreateMap<ManufacturerForCreateOrUpdateModel, Manufacturer>().ReverseMap();
 
-            CreateMap<PartModelForCreateOrUpdateModel, PartModel>();
+            CreateMap<PartModelForCreateOrUpdateModel, PartModel>().ForMember(x => x.ImageUrl, opt => opt.Ignore());
             CreateMap<PartModel, PartModelCreatedModel>();
             CreateMap<PartModel, PartModelForReadModel>();
 
