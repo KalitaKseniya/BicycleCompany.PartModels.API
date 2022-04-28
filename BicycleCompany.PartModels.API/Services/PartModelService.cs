@@ -41,12 +41,12 @@ namespace BicycleCompany.PartModels.API.Services
             CheckIfManufacturerExists(model.ManufacturerId);
             CheckIfPartExists(model.PartId);
 
+            var entity = _mapper.Map<PartModel>(model);
             if (!string.IsNullOrWhiteSpace(model.ImageUrl))
             {
                 var partModelPicture = Convert.FromBase64String(model.ImageUrl);
-                model.ImageUrl = await _fileStorageService.SaveFileAsync(partModelPicture, ".jpg", "part-models");
+                entity.ImageUrl = await _fileStorageService.SaveFileAsync(partModelPicture, ".jpg", "part-models");
             }
-            var entity = _mapper.Map<PartModel>(model);
 
             await _partModelRepository.CreateAsync(entity);
 
