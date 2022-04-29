@@ -36,13 +36,20 @@ namespace BicycleCompany.PartModels.API.Repositories
                 .ToListAsync();
         }
 
-        public async Task<PartModel> GetByIdAsync(Guid id)
+        public async Task<PartModel> GetByIdIncludedAsync(Guid id)
         {
             return await FindByCondition(m => m.Id == id)
                 .Include(pd => pd.Part)
                 .Include(pd => pd.Manufacturer)
                 .FirstOrDefaultAsync();
         }
+
+        public async Task<PartModel> GetByIdAsync(Guid id)
+        {
+            return await FindByCondition(m => m.Id == id)
+                .FirstOrDefaultAsync();
+        }
+
         public async Task<PartModel> GetByIdForPartAsync(Guid partId, Guid partModelId)
         {
             return await FindByCondition(m => m.Id == partModelId && m.PartId == partId)
