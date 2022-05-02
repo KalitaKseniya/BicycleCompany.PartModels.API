@@ -66,7 +66,7 @@ namespace BicycleCompany.PartModels.API.Services
 
         public async Task<PartModelForReadModel> GetByIdAsync(Guid id)
         {
-            var partEntity = await _partModelRepository.GetByIdAsync(id);
+            var partEntity = await _partModelRepository.GetByIdIncludedAsync(id);
             
             CheckIfFound(id, partEntity);
 
