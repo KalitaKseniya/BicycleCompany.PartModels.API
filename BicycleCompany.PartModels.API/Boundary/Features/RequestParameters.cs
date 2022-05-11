@@ -2,7 +2,7 @@
 {
     public abstract class RequestParameters
     {
-        const int maxPageSize = 50;
+        private const int MaxPageSize = 50;
 
         /// <summary>
         /// Page Number
@@ -18,10 +18,7 @@
         public int PageSize
         {
             get => _pageSize;
-            set
-            {
-                _pageSize = (value > maxPageSize) ? maxPageSize : value;
-            }
+            set => _pageSize = (value > MaxPageSize) ? MaxPageSize : value;
         }
 
         /// <summary>

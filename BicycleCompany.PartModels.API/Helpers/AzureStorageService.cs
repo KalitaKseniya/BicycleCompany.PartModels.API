@@ -1,13 +1,14 @@
 ﻿using Azure.Storage.Blobs;
+using BicycleCompany.PartModels.API.Helpers.Interfaces;
 
 namespace BicycleCompany.PartModels.API.Helpers
 {
     public class AzureStorageService : IFileStorageService
     {
-        private readonly string connectionString;
+        private readonly string _connectionString;
         public AzureStorageService(IConfiguration configuration)
         {
-            connectionString = configuration.GetConnectionString("AzureStorageConnection");
+            _connectionString = configuration.GetConnectionString("AzureStorageConnection");
         }
 
         public async Task DeleteFileAsync(string fileRoute, string containerName)
@@ -16,7 +17,7 @@ namespace BicycleCompany.PartModels.API.Helpers
             {
                 return;
             }
-            var client = new BlobContainerClient(connectionString, containerName);
+            var client = new BlobContainerClient(_connectionString, containerName);
             await client.CreateIfNotExistsAsync();
             var fileName = Path.GetFileName(fileRoute);
             var blob = client.GetBlobClient(fileName);
@@ -32,9 +33,9 @@ namespace BicycleCompany.PartModels.API.Helpers
         // container in Az = folder
         public async Task<string> SaveFileAsync(byte[] content, string extension, string containerName)
         {
-            var client = new BlobContainerClient(connectionString, containerName);
+            var client = new BlobContainerClient(_connectionString, containerName);
             await client.CreateIfNotExistsAsync();
-            client.SetAccessPolicy(Azure.Storage.Blobs.Models.PublicAccessType.Blob);
+            await client.SetAccessPolicyAsync(Azure.Storage.Blobs.Models.PublicAccessType.Blob);
             var fileName = $"{Guid.NewGuid()}{extension}";
             var blob = client.GetBlobClient(fileName);
             using (var ms = new MemoryStream(content))

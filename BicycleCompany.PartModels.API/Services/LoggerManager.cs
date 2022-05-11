@@ -7,11 +7,6 @@ namespace BicycleCompany.PartModels.API.Services
     {
         private static NLog.ILogger _logger = LogManager.GetCurrentClassLogger();
 
-        public LoggerManager()
-        {
-
-        }
-
         public void LogDebug(string message)
         {
             _logger.Debug(message);

@@ -1,4 +1,4 @@
-﻿namespace BicycleCompany.Models.Response
+﻿namespace BicycleCompany.PartModels.API.Boundary.Responses
 {
     public class PartForReadModel
     {

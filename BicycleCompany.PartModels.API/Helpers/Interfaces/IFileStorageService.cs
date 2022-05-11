@@ -1,4 +1,4 @@
-﻿namespace BicycleCompany.PartModels.API.Helpers
+﻿namespace BicycleCompany.PartModels.API.Helpers.Interfaces
 {
     public interface IFileStorageService
     {

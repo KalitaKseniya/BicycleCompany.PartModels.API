@@ -1,5 +1,4 @@
-﻿using BicycleCompany.Models.Response;
-using BicycleCompany.PartModels.API.Boundary.Responses.Manufacturer;
+﻿using BicycleCompany.PartModels.API.Boundary.Responses.Manufacturer;
 
 namespace BicycleCompany.PartModels.API.Boundary.Responses
 {

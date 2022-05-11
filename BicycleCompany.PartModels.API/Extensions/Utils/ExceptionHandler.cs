@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using System.Net;
 
-namespace BicycleCompany.PartModels.API.Utils
+namespace BicycleCompany.PartModels.API.Extensions.Utils
 {
     public class ExceptionHandler
     {

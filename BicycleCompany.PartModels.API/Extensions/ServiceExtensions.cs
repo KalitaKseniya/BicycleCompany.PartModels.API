@@ -1,4 +1,5 @@
 ﻿using BicycleCompany.PartModels.API.Helpers;
+using BicycleCompany.PartModels.API.Helpers.Interfaces;
 using BicycleCompany.PartModels.API.Infrastructure;
 using BicycleCompany.PartModels.API.Repositories;
 using BicycleCompany.PartModels.API.Repositories.Interfaces;

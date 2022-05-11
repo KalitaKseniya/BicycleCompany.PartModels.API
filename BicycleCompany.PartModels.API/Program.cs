@@ -1,6 +1,6 @@
 using BicycleCompany.PartModels.API.Extensions;
-using BicycleCompany.PartModels.API.Mapping;
-using BicycleCompany.PartModels.API.Utils;
+using BicycleCompany.PartModels.API.Extensions.Mapping;
+using BicycleCompany.PartModels.API.Extensions.Utils;
 using Microsoft.AspNetCore.Mvc;
 using NLog;
 

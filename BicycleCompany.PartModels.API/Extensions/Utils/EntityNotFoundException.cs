@@ -1,4 +1,4 @@
-﻿namespace BicycleCompany.PartModels.API.Utils
+﻿namespace BicycleCompany.PartModels.API.Extensions.Utils
 {
     /// <summary>
     /// The exception that is thrown when entity with provided id was not found.

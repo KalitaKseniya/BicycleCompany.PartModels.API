@@ -1,7 +1,6 @@
-﻿using BicycleCompany.PartModels.API.Boundary.Responses;
-using System.Net;
+﻿using System.Net;
 
-namespace BicycleCompany.Models.Response
+namespace BicycleCompany.PartModels.API.Boundary.Responses
 {
     public class AddedResponse : BaseResponseModel
     {

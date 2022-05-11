@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BicycleCompany.Models.Request
+namespace BicycleCompany.PartModels.API.Boundary.Request
 {
     public class PartForCreateOrUpdateModel
     {

@@ -1,8 +1,9 @@
 ﻿using BicycleCompany.PartModels.API.Infrastructure;
+using BicycleCompany.PartModels.API.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace BicycleCompany.PartModels.API.Repositories.Interfaces
+namespace BicycleCompany.PartModels.API.Repositories
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
@@ -10,14 +11,14 @@ namespace BicycleCompany.PartModels.API.Repositories.Interfaces
 
         public RepositoryBase(RepositoryContext repositoryContext)
         {
-            this._repositoryContext = repositoryContext;
+            _repositoryContext = repositoryContext;
         }
 
         public IQueryable<T> FindAll() => _repositoryContext.Set<T>().AsNoTracking();
 
         public IQueryable<T> FindByCondition(Expression<Func<T, bool>> expression) =>
             _repositoryContext.Set<T>().Where(expression).AsNoTracking();
-        
+
         public bool Exist(Expression<Func<T, bool>> expression) =>
             _repositoryContext.Set<T>().Any(expression);
 

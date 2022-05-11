@@ -2,11 +2,11 @@
 using BicycleCompany.PartModels.API.Boundary.Features;
 using BicycleCompany.PartModels.API.Boundary.Request;
 using BicycleCompany.PartModels.API.Boundary.Responses;
-using BicycleCompany.PartModels.API.Helpers;
+using BicycleCompany.PartModels.API.Extensions.Utils;
+using BicycleCompany.PartModels.API.Helpers.Interfaces;
 using BicycleCompany.PartModels.API.Models;
 using BicycleCompany.PartModels.API.Repositories.Interfaces;
 using BicycleCompany.PartModels.API.Services.Interfaces;
-using BicycleCompany.PartModels.API.Utils;
 
 namespace BicycleCompany.PartModels.API.Services
 {

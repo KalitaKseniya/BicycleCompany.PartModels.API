@@ -1,6 +1,5 @@
-﻿using BicycleCompany.Models.Request;
-using BicycleCompany.Models.Response;
-using BicycleCompany.PartModels.API.Boundary.Features;
+﻿using BicycleCompany.PartModels.API.Boundary.Features;
+using BicycleCompany.PartModels.API.Boundary.Request;
 using BicycleCompany.PartModels.API.Boundary.Responses;
 using BicycleCompany.PartModels.API.Extensions;
 using BicycleCompany.PartModels.API.Services.Interfaces;
