@@ -3,8 +3,6 @@ using BicycleCompany.PartModels.API.Boundary.Features;
 using BicycleCompany.PartModels.API.Boundary.Request;
 using BicycleCompany.PartModels.API.Boundary.Responses;
 using BicycleCompany.PartModels.API.Extensions;
-using BicycleCompany.PartModels.API.Helpers;
-using BicycleCompany.PartModels.API.Repositories.Interfaces;
 using BicycleCompany.PartModels.API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
@@ -98,6 +96,7 @@ namespace BicycleCompany.PartModels.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound, Type = typeof(BaseResponseModel))]
         [ProducesResponseType(StatusCodes.Status500InternalServerError, Type = typeof(BaseResponseModel))]
         [HttpGet("{id}", Name = "GetPartModel")]
+        [HttpHead("{id}")]
         public async Task<IActionResult> GetPartModel(Guid id)
         {
             var partModelEntity = await _partModelService.GetByIdAsync(id);
@@ -157,5 +156,7 @@ namespace BicycleCompany.PartModels.API.Controllers
 
             return NoContent();
         }
+
+        
     }
 }
