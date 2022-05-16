@@ -17,6 +17,11 @@ namespace BicycleCompany.PartModels.API.Boundary.Request
         public decimal Price { get; set; }
         public string ImageUrl { get; set; }
 
+        [Range(0, double.MaxValue)]
+        public double WeightInKg { get; set; }
+
+        [Range(0, double.MaxValue)]
+        public decimal PurchasePrice { get; set; }
         [Required]
         public Guid ManufacturerId { get; set; }
     }

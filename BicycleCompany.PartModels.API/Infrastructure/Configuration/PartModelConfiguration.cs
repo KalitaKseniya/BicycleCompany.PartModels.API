@@ -20,6 +20,12 @@ namespace BicycleCompany.PartModels.API.Infrastructure.Configuration
 
             builder.Property(x => x.Price)
                 .HasPrecision(15, 2);
+            
+            builder.Property(x => x.PurchasePrice)
+                .HasPrecision(15, 2);
+            
+            builder.Property(x => x.WeightInKg)
+                .HasPrecision(15, 3);
 
             builder.Property(x => x.Name)
                 .HasMaxLength(1024)
