@@ -54,7 +54,7 @@ namespace BicycleCompany.PartModels.API.Extensions
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "BicycleCompany API",
+                    Title = "BC.PartModels",
                     Description = "A simple ASP.NET Core Web API",
                 });
                 //ToDo: do we need auth?
