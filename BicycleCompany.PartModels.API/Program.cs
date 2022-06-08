@@ -24,7 +24,7 @@ builder.Services.Configure<ApiBehaviorOptions>(options =>
 builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.ConfigureCorsPolicy();
+builder.Services.ConfigureCorsPolicy(configuration);
 builder.Services.ConfigureSwagger();
 
 var app = builder.Build();
